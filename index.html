@@ -751,29 +751,25 @@ function renderExamples(){
 }
 
 function formatOutput(text){
-  if(!text || !text.trim()){
-    return `<p class="err">The system returned an empty response. Please try again.</p>`;
-  }
-  const lines = text.trim().split("\n");
-  let cardLine="", rest="";
-  if(lines[0] && lines[0].toLowerCase().startsWith("card drawn")){
-    cardLine = lines[0].replace(/^card drawn:\s*/i,"").trim();
-    rest = lines.slice(1).join("\n").trim();
-  } else {
-    rest = text.trim();
-  }
-  let html="";
-  if(cardLine) html += `<div class="card-badge">✦ ${cardLine} ✦</div><br>`;
-  const paragraphs = rest.split(/\n\n+/).filter(p=>p.trim());
-  if(paragraphs.length === 0){
-    // fallback: render as single block
-    html += `<p class="out-text">${rest.replace(/\n/g,"<br>")}</p>`;
-  } else {
-    paragraphs.forEach(p=>{
-      html += `<p class="out-text">${p.replace(/\n/g,"<br>")}</p>`;
-    });
-  }
-  return html;
+     if(!text || !text.trim()){
+         return `<p class="err">The system returned an empty response. Please try again.</p>`;
+     }
+     const lines = text.trim().split("\n");
+     let cardLine="", rest="";
+     if(lines[0] && lines[0].toLowerCase().startsWith("card drawn")){
+         cardLine = lines[0].replace(/^card drawn:\s*/i,"").trim();
+         rest = lines.slice(1).join("\n").trim();
+     } else {
+         rest = text.trim();
+     }
+
+     let html="";
+     if(cardLine) html += `<div class="card-badge">✦ ${cardLine} ✦</div><br>`;
+
+     // Render the rest as markdown
+     html += marked.parse(rest);
+
+     return html;
 }
 
 // ← Paste your Cloudflare Worker URL here
@@ -875,5 +871,6 @@ document.addEventListener("keydown",e=>{
 renderVocab();
 renderExamples();
 </script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </body>
 </html>
