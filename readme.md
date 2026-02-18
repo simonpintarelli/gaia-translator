@@ -28,7 +28,6 @@ This practice draws on:
 
 - The complete *Cards for Life* vocabulary (Dynamics, Being, and Doing)
 - Nature's patterns and the intelligence of **NESTED SYSTEMS**
-- The Karpman drama triangle as a lens for witnessing relational dynamics
 - Characteristic verbs of tending: *emerge, honour, release, tend, compost, regenerate, witness, hold space, attune, embody, unfurl, revitalise*
 
 ---
