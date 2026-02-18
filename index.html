@@ -711,12 +711,6 @@ const EXAMPLES = [
   { label:"ALPS fabric recovery",
     text:"ALPS is recovering the fabric. Storage seems to be ok, waiting for someone else to do some tests." },
 
-  { label:"Memory fragmentation",
-    text:"Performance issues with HPL are due to memory fragmentation that persists between process launches. AMD promised to share a defragmentation script. Still waiting." },
-
-  { label:"Driver upgrade saved us",
-    text:"Driver upgrade 6.10.5 helped with the memory fragmentation issue! AMD promised to share a defragmentation script. May run in SLURM prolog, or once per day depending on execution time." },
-
   { label:"GPU kernel crash (again)",
     text:"ROCm runtime error: illegal memory access at kernel launch. Process terminated with signal 11. Core dump written to /tmp. Please investigate. This is the third time this week." },
 
@@ -736,11 +730,24 @@ const EXAMPLES = [
     text: "Hi everyone, seeing weird IPv6 errors that slowdown startup: '[c10d] The IPv6 network addresses cannot be retrieved (gai error: -2)'. Is this a cluster issue or my config? It's driving me crazy."},
 
   { label: "Slurm not responding",
-    text: "squeue returns 'Zero Bytes were transmitted or received'. Tried multiple login nodes. Is Slurm down or is it just me?"
-  },
+    text: "squeue returns 'Zero Bytes were transmitted or received'. Tried multiple login nodes. Is Slurm down or is it just me?"},
 
   { label: "New user: files vanished?!",
-    text: "Hi, I'm new to Daint. I SSH'd in successfully but all my files disappeared! Where did they go? They were just on my laptop. How do I get them onto the cluster to run my Python scripts?"
+    text: "Hi, I'm new to Daint. I SSH'd in successfully but all my files disappeared! Where did they go? They were just on my laptop. How do I get them onto the cluster to run my Python scripts?"},
+
+  { label: "fingerprint mismatch",
+    text: "$ ssh santis @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@I should be able to use the filesystems, right?"},
+
+  { label: "GPU direct MPI error",
+    text: " Dear Service Desk , After the Maintenance , the CP2K calculations are stuck and not running. and reporting {{ cxil_map: write error cxil_map: write error}} the calculations starts and then it doesnt continue and slurm doesnt" },
+
+  { label: "storage issues",
+   text: "Dear Mr and Mrs As soon as I access the login node I get this message in the terminal: -bash: /opt/cray/pe/lmod/lmod/init/profile: Input/output error And I am not able to load modules."},
+
+  { label: "gnuplot isn't installed",
+   text: "I’m wondering how to access gnuplot on eiger/daint. I’ve looked at alps resources and I can’t find information on this. Is there an available uenv i can pull, or do i need to compile it myself? Many in our group are interested in this. Thanks for all the help,"},
+  { label: "running jobs on the login node",
+    text: "We have noticed that you are running running on the GPU of the login node of Daint.Alps. As a reminder, it is forbidden to run for long times on login nodes, as detailed in the fair usage policies"
   }
 ];
 
