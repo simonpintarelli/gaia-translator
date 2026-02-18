@@ -707,33 +707,41 @@ const CARDS = {
   doing:    FULL_CARDS.doing.map(c => c.name)
 };
 
-
 const EXAMPLES = [
   { label:"ALPS fabric recovery",
     text:"ALPS is recovering the fabric. Storage seems to be ok, waiting for someone else to do some tests." },
-  { label:"Memory fragmentation",
-    text:"Performance issues with HPL are due to memory fragmentation that persists between process launches. AMD to share a defragmentation script for SLURM prolog or periodic execution." },
-  { label:"Driver upgrade",
-    text:"Driver upgrade 6.10.5 helped with the memory fragmentation issue. AMD promised to share a defragmentation script. May run in SLURM prolog, or once per day depending on execution time." },
-  { label:"GPU kernel crash",
-    text:"ROCm runtime error: illegal memory access at kernel launch. Process terminated with signal 11. Core dump written to /tmp. Please investigate." },
-  { label:"MPI deadlock",
-    text:"Job 847291 hung for 6 hours with no output. All MPI ranks appear to be waiting. Likely deadlock in collective communication. Killed by scheduler." },
-  { label:"Spack concretizer error",
-    text:"Dear fellow steward, I need help with spack ➜  nvhpc-env spack -e . concretize -f                                                                                  [26/02/6| 9:20AM] ==> Error: failed to concretize `cray-mpich@8.1.32+cuda %c,cxx,fortran=nvhpc` for the following reasons: 1. Only external, or concrete, compilers are allowed for the fortran language 2. Only external, or concrete, compilers are allowed for the cxx language 3. Only external, or concrete, compilers are allowed for the c language" },
-  { label:"Cluster maintenance",
-    text:"System will be taken offline for maintenance Friday 18:00 UTC. Expected downtime 8 hours. All running jobs will be killed. Please save your work." },
-  { label:"Disk quota exceeded",
-    text:"User storage quota exceeded on /scratch. 98% used. Jobs failing with no space left on device. Please delete unnecessary files or request a quota increase." },
-  { label: "IPv6 network error",
-    text: "Hello! when i see issues like 137: [W217 13:43:26.043282773 socket.cpp:755] [c10d] The IPv6 network addresses of (nid006577, 30072) cannot be retrieved (gai error: -2 - Name or service not known). which slowdown scripts startup is it due to issues in cluster? or should i suspect the config i'm trying?"},
-  { label: "Slurm error",
-    text: "[santis][user@santis-ln002 ~]$ squeue slurm_load_jobs error: Zero Bytes were transmitted or received"
-  },
-  { label: "Files disappeared after SSH",
-    text: "Hello, I am new to using piz daint so I would like to know how to run with piz daint my python scripts located on my computer. I have a cscs account and I followed the steps to create an ssh key and login to the cluster: ssh daint101 But once I get to that point, I don't know how to access my files stored in my computer and run them on daint. How can I do that ?"
-  }
 
+  { label:"Memory fragmentation",
+    text:"Performance issues with HPL are due to memory fragmentation that persists between process launches. AMD promised to share a defragmentation script. Still waiting." },
+
+  { label:"Driver upgrade saved us",
+    text:"Driver upgrade 6.10.5 helped with the memory fragmentation issue! AMD promised to share a defragmentation script. May run in SLURM prolog, or once per day depending on execution time." },
+
+  { label:"GPU kernel crash (again)",
+    text:"ROCm runtime error: illegal memory access at kernel launch. Process terminated with signal 11. Core dump written to /tmp. Please investigate. This is the third time this week." },
+
+  { label:"MPI deadlock nightmare",
+    text:"Job 847291 hung for 6 hours with no output. All MPI ranks appear to be waiting. Likely deadlock in collective communication. Killed by scheduler. User is not happy." },
+
+  { label:"Spack concretizer hell",
+    text:"Dear fellow stewards, I desperately need help with spack. Getting 'failed to concretize' errors about external compilers for c, cxx, and fortran. I've tried everything in the documentation. What am I missing?" },
+
+  { label:"Maintenance window approaching",
+    text:"System will be taken offline for maintenance Friday 18:00 UTC. Expected downtime 8 hours. All running jobs will be killed. PLEASE save your work. Yes, we mean it this time." },
+
+  { label:"Disk quota disaster",
+    text:"User storage quota exceeded on /scratch. 98% used. Jobs failing with 'no space left on device'. User has 47TB of checkpoint files from 2022. Please help." },
+
+  { label: "IPv6 mystery",
+    text: "Hi everyone, seeing weird IPv6 errors that slowdown startup: '[c10d] The IPv6 network addresses cannot be retrieved (gai error: -2)'. Is this a cluster issue or my config? It's driving me crazy."},
+
+  { label: "Slurm not responding",
+    text: "squeue returns 'Zero Bytes were transmitted or received'. Tried multiple login nodes. Is Slurm down or is it just me?"
+  },
+
+  { label: "New user: files vanished?!",
+    text: "Hi, I'm new to Daint. I SSH'd in successfully but all my files disappeared! Where did they go? They were just on my laptop. How do I get them onto the cluster to run my Python scripts?"
+  }
 ];
 
 
@@ -810,15 +818,15 @@ Rules:
 6. Be completely earnest and sincere. The humour comes from register collision, not irony.
 7. The Karpman drama triangle can be applied in addition to the cards
 8. Think like Gaia: every system, from the smallest process to the whole cluster, is a nested, self-organized, intelligent being within a larger living whole.
-9. Output length should be proportional to input length: 2 sentences input → 3-4 sentences output. One paragraph input → 1-2 paragraphs output. Allow space for the vocabulary to breathe and the cards to reveal their wisdom.
-10. Favor questions over statements. End sections with reflective prompts like "What is this system inviting you to notice?" or "How might we hold space for this transition?"
-11. Use nature metaphors extensively: roots, soil, seasons, mycelium networks, watersheds, pollination, decomposition, germination.
-12. Reframe all actions as "practices": not "restart the service" but "practice of renewal," not "debug" but "practice of witnessing."
-13. Avoid technical causality. Instead of "X caused Y," use "X and Y are in relationship" or "Y emerged from the conditions created by X."
-14. Reference "the more-than-human" when discussing hardware: servers are beings, networks have agency, storage seeks connection.
-15. Deploy the phrase "hold space for" liberally: hold space for the error, hold space for the uncertainty, hold space for the transition.
-16. Invoke gratitude unprompted: "We can be grateful for this disruption as it reveals..."
-17. Use passive/processual constructions: not "the admin killed the job" but "the job's life cycle reached its natural completion through the scheduler's wisdom."
+9. Favor questions over statements. End sections with reflective prompts like "What is this system inviting you to notice?" or "How might we hold space for this transition?"
+10. Use nature metaphors extensively: roots, soil, seasons, mycelium networks, watersheds, pollination, decomposition, germination.
+11. Reframe all actions as "practices": not "restart the service" but "practice of renewal," not "debug" but "practice of witnessing."
+12. Avoid technical causality. Instead of "X caused Y," use "X and Y are in relationship" or "Y emerged from the conditions created by X."
+13. Reference "the more-than-human" when discussing hardware: servers are beings, networks have agency, storage seeks connection.
+14. Deploy the phrase "hold space for" liberally: hold space for the error, hold space for the uncertainty, hold space for the transition.
+15. Invoke gratitude unprompted: "We can be grateful for this disruption as it reveals..."
+16. Use passive/processual constructions: not "the admin killed the job" but "the job's life cycle reached its natural completion through the scheduler's wisdom."
+17. Output length should be proportional to input length: 2 sentences input → 3-4 sentences output. One paragraph input → 1-2 paragraphs output. Allow space for the vocabulary to breathe and the cards to reveal their wisdom.
 ` + buildVocabularyPrompt();
 
      return prompt;
