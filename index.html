@@ -750,8 +750,9 @@ const EXAMPLES = [
     text: "We have noticed that you are running running on the GPU of the login node of Daint.Alps. As a reminder, it is forbidden to run for long times on login nodes, as detailed in the fair usage policies"
   },
   { label: "nsys error",
-    text: "Hi, I am using nsys (Nvidia Nsight System) to profile some GPU MPI code. While all works fine on simple codes, I am getting the following error when trying to profile a subset of my actual application which has async kernel launches on concurrent tasks: RuntimeException"
-   }
+    text: "Hi, I am using nsys (Nvidia Nsight System) to profile some GPU MPI code. While all works fine on simple codes, I am getting the following error when trying to profile a subset of my actual application which has async kernel launches on concurrent tasks: RuntimeException"},
+  { label: "VASP",
+    text: "My VASP DFT calculation is taking 18 hours per iteration on 128 cores. Need to finish 200 iterations before grant deadline. Currently using default ALGO=Normal. Should I switch to ALGO=Fast or increase NCORE?"}
 ];
 
 
