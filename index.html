@@ -748,7 +748,10 @@ const EXAMPLES = [
    text: "I’m wondering how to access gnuplot on eiger/daint. I’ve looked at alps resources and I can’t find information on this. Is there an available uenv i can pull, or do i need to compile it myself? Many in our group are interested in this. Thanks for all the help,"},
   { label: "running jobs on the login node",
     text: "We have noticed that you are running running on the GPU of the login node of Daint.Alps. As a reminder, it is forbidden to run for long times on login nodes, as detailed in the fair usage policies"
-  }
+  },
+  { label: "nsys error",
+    text: "Hi, I am using nsys (Nvidia Nsight System) to profile some GPU MPI code. While all works fine on simple codes, I am getting the following error when trying to profile a subset of my actual application which has async kernel launches on concurrent tasks: RuntimeException"
+   }
 ];
 
 
