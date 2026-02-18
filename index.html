@@ -664,7 +664,9 @@ const EXAMPLES = [
   { label:"Cluster maintenance",
     text:"System will be taken offline for maintenance Friday 18:00 UTC. Expected downtime 8 hours. All running jobs will be killed. Please save your work." },
   { label:"Disk quota exceeded",
-    text:"User storage quota exceeded on /scratch. 98% used. Jobs failing with no space left on device. Please delete unnecessary files or request a quota increase." }
+    text:"User storage quota exceeded on /scratch. 98% used. Jobs failing with no space left on device. Please delete unnecessary files or request a quota increase." },
+  { label: "IPv6 network error",
+    text: "Hello! when i see issues like 137: [W217 13:43:26.043282773 socket.cpp:755] [c10d] The IPv6 network addresses of (nid006577, 30072) cannot be retrieved (gai error: -2 - Name or service not known). which slowdown scripts startup is it due to issues in cluster? or should i suspect the config i'm trying?"}
 ];
 
 function $(id){ return document.getElementById(id); }
