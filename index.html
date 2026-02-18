@@ -660,15 +660,19 @@ const EXAMPLES = [
     text:"ROCm runtime error: illegal memory access at kernel launch. Process terminated with signal 11. Core dump written to /tmp. Please investigate." },
   { label:"MPI deadlock",
     text:"Job 847291 hung for 6 hours with no output. All MPI ranks appear to be waiting. Likely deadlock in collective communication. Killed by scheduler." },
-  { label:"Spack build failure",
-    text:"Spack installation of SIRIUS@7.5.0 failed: CMake could not find HDF5. Module hdf5/1.12.2 is loaded but pkg-config returns wrong prefix. Workaround: set HDF5_DIR manually." },
+  { label:"Spack concretizer error",
+    text:"Dear fellow steward, I need help with spack ➜  nvhpc-env spack -e . concretize -f                                                                                  [26/02/6| 9:20AM] ==> Error: failed to concretize `cray-mpich@8.1.32+cuda %c,cxx,fortran=nvhpc` for the following reasons: 1. Only external, or concrete, compilers are allowed for the fortran language 2. Only external, or concrete, compilers are allowed for the cxx language 3. Only external, or concrete, compilers are allowed for the c language" },
   { label:"Cluster maintenance",
     text:"System will be taken offline for maintenance Friday 18:00 UTC. Expected downtime 8 hours. All running jobs will be killed. Please save your work." },
   { label:"Disk quota exceeded",
     text:"User storage quota exceeded on /scratch. 98% used. Jobs failing with no space left on device. Please delete unnecessary files or request a quota increase." },
   { label: "IPv6 network error",
-    text: "Hello! when i see issues like 137: [W217 13:43:26.043282773 socket.cpp:755] [c10d] The IPv6 network addresses of (nid006577, 30072) cannot be retrieved (gai error: -2 - Name or service not known). which slowdown scripts startup is it due to issues in cluster? or should i suspect the config i'm trying?"}
+    text: "Hello! when i see issues like 137: [W217 13:43:26.043282773 socket.cpp:755] [c10d] The IPv6 network addresses of (nid006577, 30072) cannot be retrieved (gai error: -2 - Name or service not known). which slowdown scripts startup is it due to issues in cluster? or should i suspect the config i'm trying?"},
+  { label: "Slurm error",
+    text: "[santis][user@santis-ln002 ~]$ squeue slurm_load_jobs error: Zero Bytes were transmitted or received"
+  }
 ];
+
 
 function $(id){ return document.getElementById(id); }
 
