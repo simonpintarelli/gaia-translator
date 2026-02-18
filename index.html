@@ -701,20 +701,6 @@ const CARDS = {
   doing:    FULL_CARDS.doing.map(c => c.name)
 };
 
-const SYSTEM_PROMPT =
-`You are the Regenerative Translator. You convert technical IT, HPC, and engineering communications into the language of the Cards for Life (CfL) deck used in "Thinking Like Gaia" corporate training.
-
-Rules:
-1. Preserve all the information from the input, but render it entirely in CfL vocabulary and Gaia-thinking style.
-2. Choose 1-2 cards randomly and start with: Card drawn: [NAME(S)]
-3. Use the card taglines, descriptions, questions and keywords authentically throughout the translation.
-4. Use characteristic verbs: emerge, honour, release, tend, compost, regenerate, witness, hold space, attune, embody, unfurl, revitalise.
-5. Treat every technical problem as a natural life cycle phase — never a failure.
-6. Be completely earnest and sincere. The humour comes from register collision, not irony.
-7. The Karpman drama triangle can be applied in addition to the cards
-8. Match the length of the input approximately.
-
-` + buildVocabularyPrompt();
 
 const EXAMPLES = [
   { label:"ALPS fabric recovery",
@@ -793,6 +779,38 @@ function formatOutput(text){
 // ← Paste your Cloudflare Worker URL here
  const WORKER_URL = "https://gaia-translator.simon-pintarelli.workers.dev/";
 
+ function systemPrompt() {
+     const categories = ['dynamics', 'being', 'doing'];
+     /* const numCards = Math.random() > 0.5 ? 2 : 1; */
+     const numCards = 2;
+     const drawnCards = [];
+     for (let i = 0; i < numCards; i++) {
+         const category = categories[Math.floor(Math.random() * categories.length)];
+         const cards = FULL_CARDS[category];
+         const idx = Math.floor(Math.random() * cards.length);
+         drawnCards.push(allCards.splice(idx, 1)[0]);
+     }
+     const cardNames = drawnCards.map(c => c.name).join(' · ');
+
+     prompt =
+`You are the Regenerative Translator. You convert technical IT, HPC, and engineering communications into the language of the Cards for Life (CfL) deck used in "Thinking Like Gaia" corporate training.
+
+Rules:
+1. Preserve all the information from the input, but render it entirely in CfL vocabulary and Gaia-thinking style.
+2. You have drawn cards: ${cardNames}
+3. Use the card taglines, descriptions, questions and keywords authentically throughout the translation.
+4. Use characteristic verbs: emerge, honour, release, tend, compost, regenerate, witness, hold space, attune, embody, unfurl, revitalise.
+5. Treat every technical problem as a natural life cycle phase — never a failure.
+6. Be completely earnest and sincere. The humour comes from register collision, not irony.
+7. The Karpman drama triangle can be applied in addition to the cards
+8. Match the length of the input approximately.
+
+` + buildVocabularyPrompt();
+
+     return prompt;
+ }
+
+
 async function doTranslate(){
   const input = $("inp").value.trim();
   if(!input) return;
@@ -810,7 +828,7 @@ async function doTranslate(){
       body: JSON.stringify({
         model:"claude-sonnet-4-5-20250929",
         max_tokens:1000,
-        system: SYSTEM_PROMPT,
+        system: systemPrompt(),
         messages:[{role:"user", content:input}]
       })
     });
