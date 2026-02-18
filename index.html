@@ -788,7 +788,7 @@ function formatOutput(text){
          const category = categories[Math.floor(Math.random() * categories.length)];
          const cards = FULL_CARDS[category];
          const idx = Math.floor(Math.random() * cards.length);
-         drawnCards.push(allCards.splice(idx, 1)[0]);
+         drawnCards.push(cards.splice(idx, 1)[0]);
      }
      const cardNames = drawnCards.map(c => c.name).join(' · ');
 
