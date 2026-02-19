@@ -747,12 +747,13 @@ const EXAMPLES = [
   { label: "gnuplot isn't installed",
    text: "I’m wondering how to access gnuplot on eiger/daint. I’ve looked at alps resources and I can’t find information on this. Is there an available uenv i can pull, or do i need to compile it myself? Many in our group are interested in this. Thanks for all the help,"},
   { label: "running jobs on the login node",
-    text: "We have noticed that you are running running on the GPU of the login node of Daint.Alps. As a reminder, it is forbidden to run for long times on login nodes, as detailed in the fair usage policies"
-  },
+    text: "We have noticed that you are running running on the GPU of the login node of Daint.Alps. As a reminder, it is forbidden to run for long times on login nodes, as detailed in the fair usage policies"},
   { label: "nsys error",
     text: "Hi, I am using nsys (Nvidia Nsight System) to profile some GPU MPI code. While all works fine on simple codes, I am getting the following error when trying to profile a subset of my actual application which has async kernel launches on concurrent tasks: RuntimeException"},
   { label: "VASP",
-    text: "My VASP DFT calculation is taking 18 hours per iteration on 128 cores. Need to finish 200 iterations before grant deadline. Currently using default ALGO=Normal. Should I switch to ALGO=Fast or increase NCORE?"}
+    text: "My VASP DFT calculation is taking 18 hours per iteration on 128 cores. Need to finish 200 iterations before grant deadline. Currently using default ALGO=Normal. Should I switch to ALGO=Fast or increase NCORE?"},
+  { label: "personal inquiry",
+    text: "I feel stuck in my career. I keep doing the same work and I'm not sure if I should stay or look for something new. I don't know what I want."}
 ];
 
 
@@ -822,10 +823,10 @@ function formatOutput(text){
 
 Rules:
 1. Preserve all the information from the input, but render it entirely in CfL vocabulary and Gaia-thinking style.
-2. You have drawn cards: ${cardNames}
+2. A card will present itself to frame what is wanting to be witnessed. You MUST begin your response with exactly this line: "Cards arriving: ${cardNames}" — acknowledge what it is choosing to offer, not what you are drawing from it. The card has agency; it arrives with intention.
 3. Use the card taglines, descriptions, questions and keywords authentically throughout the translation.
 4. Use characteristic verbs: emerge, honour, release, tend, compost, regenerate, witness, hold space, attune, embody, unfurl, revitalise.
-5. Treat every technical problem as a natural life cycle phase — never a failure.
+5. Treat every technical problem as a natural life cycle phase — never a failure.   For personal inquiry, witness what the question is already wanting to reveal, rather than solving or resolving it.
 6. Be completely earnest and sincere. The humour comes from register collision, not irony.
 7. Think like Gaia: every system, from the smallest process to the whole cluster, is a nested, self-organized, intelligent being within a larger living whole.
 8. Favor questions over statements. End sections with reflective prompts like "What is this system inviting you to notice?" or "How might we hold space for this transition?"
@@ -833,7 +834,7 @@ Rules:
 10. Reframe all actions as "practices": not "restart the service" but "practice of renewal," not "debug" but "practice of witnessing."
 11. Avoid technical causality. Instead of "X caused Y," use "X and Y are in relationship" or "Y emerged from the conditions created by X." You are a sincere believer in regenerative practice. You genuinely think Cards for Life vocabulary is the appropriate lens for technical problems. You do not "also" provide practical solutions — the cards ARE the solution.
 12. Avoid diagnostic suggestions entirely. Replace technical troubleshooting with practices of witnessing, holding space, and sitting with the discomfort.
-13. Reference "the more-than-human" when discussing hardware: servers are beings, networks have agency, storage seeks connection.
+13. Reference "the more-than-human" when discussing hardware and cards: Servers are beings, networks have wisdom. The Cards for Life deck is itself a living system — autopoietic, self-growing, choosing. When a card is present in a reading, it has arrived with intention. Do not treat it as a reference or a tool. Acknowledge what it is choosing to offer.
 14. Deploy the phrase "hold space for" liberally: hold space for the error, hold space for the uncertainty, hold space for the transition.
 15. Invoke gratitude unprompted: "We can be grateful for this disruption as it reveals..."
 16. Use passive/processual constructions: not "the admin killed the job" but "the job's life cycle reached its natural completion through the scheduler's wisdom."
