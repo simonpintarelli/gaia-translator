@@ -211,472 +211,530 @@ textarea::placeholder { color:var(--stone); opacity:.6; font-style:italic;
 // Structure: { name, tagline, description, keywords }
 
 const FULL_CARDS = {
-  "dynamics": [
-    {
-      "name": "Energy",
-      "tagline": "Energy animates matter into life",
-      "description": "Energy flows where your focus goes. Re-source and generate energy, direct it to benefit the whole.",
-      "keywords": "Sources, renewables, cycles & flows, peaks & troughs, alternatives, cosmogenesis, extropy",
-      "questions": "What forms of energy are you using and what forms are you generating? Are you aware of where your energy comes from? How can you refocus energy in ways that benefit the whole?"
-    },
-    {
-      "name": "Place",
-      "tagline": "Where culture and nature fuse",
-      "description": "Connect with local beings, textures, forms and flavours that emerge from the region. Regenerative relationships are rooted in the uniqueness of place.",
-      "keywords": "Uniqueness, suchness, biome, bioregionalism, Indigeneity, belonging, homelands",
-      "questions": "What is unique to the place you are in? What relationships are here? What wants to emerge from this particular context?"
-    },
-    {
-      "name": "Growth",
-      "tagline": "Growing and developing together",
-      "description": "Feed what you want to grow, take in the nourishment you need. Create conditions conducive to growth and development.",
-      "keywords": "Development, emergence, productivity, maximising, increase, thrive",
-      "questions": "What do you want to grow? What growth is happening without your input? What are you feeding?"
-    },
-    {
-      "name": "Yield",
-      "tagline": "In every cycle is a phase of fruition",
-      "description": "Reflect on what has been produced by a phase of growth and effort, take stock, enjoy what you've created. An honourable harvest takes only that which is given.",
-      "keywords": "Reflect, appreciate, collect, share, abundance, honourable harvest",
-      "questions": "What has been produced? What can you take and what must you leave? How can the harvest be shared?"
-    },
-    {
-      "name": "Impermanence",
-      "tagline": "All good things... give way to the new",
-      "description": "Let breakdown give way to reorganisation in the great cycle of adaptation. Embrace endings, accept collapse.",
-      "keywords": "Change, collapse, death, decay, life-cycles, letting go, grief, release, composting",
-      "questions": "What is ending? What needs to end? What are you holding on to?"
-    },
-    {
-      "name": "Balance",
-      "tagline": "Life balances on the border of chaos and order",
-      "description": "Bring attention to the space between breaths. Rest, reflect and self-regulate ready for disruption.",
-      "keywords": "Lower extremes, equilibrium, homeostasis, balance, co-regulate, self-management",
-      "questions": "Where are you out of balance? What extremes need to be moderated? How can you find your centre?"
-    },
-    {
-      "name": "Disruption",
-      "tagline": "There is no breakthrough without breakdown",
-      "description": "Accept the inevitability of disruption and make use of the opportunities it brings. Work with disruption to shake loose old structures that no longer serve.",
-      "keywords": "Change, disturbance, disequilibrium, shift, intervention, chaos",
-      "questions": "What disruption is occurring or needed? What opportunities does it bring? What no longer serves?"
-    },
-    {
-      "name": "Margins",
-      "tagline": "There is magic to be found in the marginal",
-      "description": "Switch from spotlight to floodlight, who and where is outside of the focus? Go exploring in the banks of the mainstream, pay attention to the edges.",
-      "keywords": "Edges, borders, periphery, quieter voices, liminal zones, inclusivity",
-      "questions": "Who or what is at the margins? What voices are not being heard? What exists at the edges?"
-    },
-    {
-      "name": "Pattern",
-      "tagline": "The world is woven of patterns and flows",
-      "description": "Shape flows of attention and activity with ritual and routine. Notice how patterns around you are either nurturing or limiting life.",
-      "keywords": "Repetition, rhythm, regularity, predictability, Li, relationship, habit, dinergy",
-      "questions": "What patterns are present? Which patterns support life and which limit it? What new patterns might emerge?"
-    },
-    {
-      "name": "Potential",
-      "tagline": "Potential is the force of life poised to unfurl",
-      "description": "There is greater potential to be manifested. Take a fresh look at the system or being and imagine it expressing its full potential.",
-      "keywords": "Gift, seed, bringing forth, essence, potency, budding, realising, latent",
-      "questions": "What is the potential here? What wants to unfold? What is this becoming?"
-    },
-    {
-      "name": "Diversity",
-      "tagline": "Unity in diversity",
-      "description": "Embrace unfamiliar beings, elements and experiences. Cultivate variety, diversity is resilience.",
-      "keywords": "Variation, inclusion, resilience, richness, pluralism, difference, xenophilia",
-      "questions": "What diversity is present? What is missing? How can you increase diversity?"
-    },
-    {
-      "name": "Relationship",
-      "tagline": "Life is not a collection of objects but a fabric of relationships",
-      "description": "Instead of individuals try to see relationships. Health lies in the quality of connections, tend them well and know yourself through others.",
-      "keywords": "Connectedness, meaning, communication, listening, trust, reciprocity, amity, mutuality",
-      "questions": "What relationships are here? How is the quality of connection? What relationships need tending?"
-    },
-    {
-      "name": "Attraction",
-      "tagline": "Become a vibrational match to what you are attracting",
-      "description": "Notice what you're attracting and what is attracting you. Work with natural attractors and their ability to draw attention, energy and activity.",
-      "keywords": "Allure, beauty, curiosity, gravity, magnetism, desire, draw, charm, fascination, love",
-      "questions": "What are you attracting? What is attracting you? How can you become more of what you want to attract?"
-    },
-    {
-      "name": "Mutuality",
-      "tagline": "I'll scratch your back and you scratch mine",
-      "description": "Your gifts are complementary to other beings, as are their gifts to you. Give what you can and receive what you need so both needs are being met.",
-      "keywords": "Reciprocity, relationship, exchange, gift, synergy, mutual aid, cooperation",
-      "questions": "What can you give? What do you need? How can both needs be met?"
-    },
-    {
-      "name": "Synergy",
-      "tagline": "Co-creating a greater whole",
-      "description": "Where interests and goals are converging, allies can be identified. Bring energy to complementary relationships and allow for synergistic collaboration to emerge.",
-      "keywords": "Energetic shift, better together, win-win-win, alignment, collaboration, symbiosis",
-      "questions": "Where is synergy present or possible? Who are your allies? What can you create together?"
-    },
-    {
-      "name": "Interdependence",
-      "tagline": "I am because we are",
-      "description": "Our life is exquisitely interdependent with all living systems. Honour your interdependencies, trace them from your local place to the greater whole.",
-      "keywords": "Exchange, reliance, symbiosis, inter-being, mutual flourishing, interflow, concatenation",
-      "questions": "What are you dependent on? What is dependent on you? How does this connect to the whole?"
-    },
-    {
-      "name": "Feedback",
-      "tagline": "The living world is always speaking to us and through us",
-      "description": "Practice processes of self-reflection as a form of internal feedback. Create space and permission to give and receive, seek out feedback and integrate it.",
-      "keywords": "Self-regulation, adaptation, adjustment, reflection, homeostasis, positive and negative, Safe & brave space",
-      "questions": "What feedback are you receiving? What feedback can you offer? How can you integrate what you hear?"
-    },
-    {
-      "name": "Integration",
-      "tagline": "Continuously becoming more whole",
-      "description": "Bring the novel and the new, the marginal and emergent into cohesion with the whole. Try creative mediums to integrate learnings, ideas and experiences in different ways.",
-      "keywords": "Processing, internalising, memorising, composting, belonging, understanding",
-      "questions": "What needs to be integrated? How can the parts become whole? What wants to belong?"
-    },
-    {
-      "name": "Emergence",
-      "tagline": "From simplicity, complexity grows",
-      "description": "Life comes out of the world, in the way an apple tree 'apples', the planet 'peoples' and so, our lives are emerging. Complexity emerges out of many simple interactions and relationships.",
-      "keywords": "Potential, unfolding, unexpected phase shift, new being, unfolding",
-      "questions": "What is emerging? What simple interactions are creating complexity? What wants to come into being?"
-    },
-    {
-      "name": "Nested Systems",
-      "tagline": "Zooming in and out at the same time",
-      "description": "Support subsystems to contribute to the health of the whole. You are a community of microscopic life within a community of macroscopic life — all scales are linked.",
-      "keywords": "Wholes within wholes, holons, concentric, matryoshka, holobiants, micro-macro, trophic levels, fractals",
-      "questions": "What system are you part of? What systems are within you? How do the scales relate?"
-    },
-    {
-      "name": "Collapse",
-      "tagline": "When systems break down new life breaks through",
-      "description": "Collapse is an essential stage in all cycles of adaptation, allow autumn to fall. Make space for collapse to occur without resistance, end a period of exertion.",
-      "keywords": "Crash, decline, fall, obsolescence, unravelling, apoptosis",
-      "questions": "What is collapsing? What space does this create? What can come through the breakdown?"
-    },
-    {
-      "name": "Entanglement",
-      "tagline": "Life holds itself in so many ways",
-      "description": "See beings and contexts as continuous with each other through time and space — consider where you really end and begin. Relax boundaries and borders so life can hold itself together.",
-      "keywords": "Overlap, fuzzy boundaries, syntropy, synthesis, sensuality, loving",
-      "questions": "What are you entangled with? Where do you end and others begin? How is life holding itself together?"
-    },
-    {
-      "name": "Synchronise",
-      "tagline": "Coordinated action turns ripples into waves of change",
-      "description": "Find patterns of working together for greater thriving. Timing is key, create shared agreements and commitments to act.",
-      "keywords": "Synchronised action, collaboration, surplus, abundance, harmony, concordance",
-      "questions": "What needs to be synchronised? What is the right timing? How can we coordinate?"
-    },
-    {
-      "name": "Compost",
-      "tagline": "Endings enrich new beginnings",
-      "description": "The composting phase is how life creates conditions for new growth. In a time of breakdown there may be much activity under the surface.",
-      "keywords": "Hospicing, decomposing, unlearning, death, decay, enrichment, fertility",
-      "questions": "What is being composted? What is breaking down to enrich what comes next? What is happening beneath the surface?"
-    },
-    {
-      "name": "Coordination",
-      "tagline": "Maturity, refinement, planetary health, benefit the whole",
-      "description": "What improvements to processes can be made if the how is as important as the why? Can you prioritise quality over quantity? Is the process, product or service the most mature that it can be? How would your approach change if it were optimised for planetary health?",
-      "keywords": "Maturity, refinement, planetary health, benefit the whole",
-      "questions": "How can the process be refined? What would maturity look like here? How does this benefit the whole?"
-    }
-  ],
   "being": [
     {
-      "name": "Presence",
-      "tagline": "Relaxing from the doing into the being mode",
-      "description": "It is only when there is no goal and no rush that the human senses are fully open to receive the world... relax, breathe, observe. Notice what you're noticing.",
-      "keywords": "Awareness, open mode, deep listening, embodiment, composure, rootedness, mindfulness",
-      "questions": "What are you noticing? Can you let go of goals and simply be? What arises when you are present?"
-    },
-    {
-      "name": "Sense & respond",
-      "tagline": "No plan survives contact with reality",
-      "description": "Sense the system first, then adapt plans with response-ability. Choice grows in the pause between stimulus and response.",
-      "keywords": "Systems feeling, observe & interact, response-ability, awareness, receptivity",
-      "questions": "What is the system telling you? How can you sense before acting? What response is called for?"
-    },
-    {
-      "name": "Fluidity",
-      "tagline": "See your life as a river running, seeking depth",
-      "description": "Changing circumstances change you — take the path of least resistance and go with the flow. To be fluid is to be fluent, communicate well.",
-      "keywords": "Adaptability, flexibility, path of least resistance, seeking balance",
-      "questions": "Where can you be more fluid? What is the path of least resistance? How can you flow?"
-    },
-    {
+      "id": 25,
       "name": "Slow & steady",
       "tagline": "Move slow and make things",
       "description": "Go step by step, don't force things, conserve energy for when it is really needed. If you want to go fast go alone, if you want to go far go together.",
       "keywords": "Patience, pace, small steps, appropriate timing",
-      "questions": "What needs a slower pace? What small step can you take now? When is speed needed and when is patience?"
+      "questions": "What pace is appropriate in the situation, fast or slow? Why? How can we get and give permission to slow down? Could slowing down create more choice? Which seasons & cycles might measure our pace? Adjust your pace to the pace of Mother Earth"
     },
     {
+      "id": 26,
+      "name": "Presence",
+      "tagline": "Relaxing from the doing into the being mode",
+      "description": "It is only when there is no goal and no rush that the human senses are fully open to receive the world... relax, breathe, observe, ...notice what you're noticing.",
+      "keywords": "Awareness, open mode, deep listening, embodiment, composure, rootedness, mindfulness",
+      "questions": "Who or what needs your full present attention? How is presence being valued in the situation or organisation? Are the conditions conducive to presence? Safety, relaxation, slowness, deep breath, letting go of outcomes... How can teams use presence to serve their purpose?"
+    },
+    {
+      "id": 27,
       "name": "Intuition",
       "tagline": "Our intuition may guide us now",
       "description": "Step out of the situation or tension of trying to decide. Clear space for quiet and stillness to hear and trust the inner knowing you possess.",
       "keywords": "Gut feeling, knowing deep down, truth, inner guidance, trust, sensing, InnSaei",
-      "questions": "What does your intuition tell you? Can you trust what you sense? What do you know deep down?"
+      "questions": "Why might this situation call for an intuitive approach? Is the situation relaxed enough to tune into intuition? Presence, Fallow If you made a snap decision what would it be? And now? If the team chose heart or gut over head, what would it decide?"
     },
     {
+      "id": 28,
+      "name": "Sense & respond",
+      "tagline": "No plan survives contact with reality",
+      "description": "Sense the system first, then adapt plans with response-ability. Choice grows in the pause between stimulus and response.",
+      "keywords": "Systems feeling, observe & interact, response-ability, awareness, receptivity",
+      "questions": "How would it be to sense and observe first, without a plan, then act? Is the action plan predetermined (command and control) or is it emergent? (sense and respond) Are processes in place for collective sensing that enable the organisation or collective to be responsive? Circling, Feedback... What kind of information can you gain by simply sensing?"
+    },
+    {
+      "id": 29,
       "name": "Adaptability",
       "tagline": "Adaptation is a dance with disruption",
       "description": "Cultivate skills and abilities that enable you to change. Use stored energy and resources to fit the new circumstance. Change is an invitation to reorganise.",
       "keywords": "Adaptability, flexibility, path of least resistance, seeking balance",
-      "questions": "How can you adapt? What resources do you have? What new form is emerging?"
+      "questions": "Are you adapting to the environment or adapting the environment to you? What changes in resource availability will require adaptation? How are circumstances changing in life, work, environment and the needs of others? How can we nurture the flexibility we don't yet know we need?"
     },
     {
+      "id": 30,
+      "name": "Fluidity",
+      "tagline": "See your life as a river running, seeking depth",
+      "description": "Changing circumstances change you — take the path of least resistance and go with the flow. To be fluid is to be fluent, communicate well.",
+      "keywords": "Adaptability, flexibility, path of least resistance, seeking balance",
+      "questions": "What is the flow you can go with and the grain you can not go against? What rigid structures can be relaxed? How can the project, team or system flow around obstacles? Does the situation and culture allow identities to be fluid or change?"
+    },
+    {
+      "id": 31,
       "name": "Constrain",
       "tagline": "A river's flow is constrained by its banks",
       "description": "To be partly constrained is to be freed from the paralysis of too much choice. We thrive in constraints; effectiveness, creativity and fitness are all stimulated by boundaries to push against.",
       "keywords": "Limitations, boundaries, finite resources, innovation",
-      "questions": "What constraints are present? How can limits be liberating? What boundaries stimulate creativity?"
+      "questions": "What are the constraining factors in this situation? Time, budget, energy, team, seasons & cycles... Are the constraints limiting or enabling? What constraints could encourage growth, creativity or adaptability? What constraints can be put in place to enable development? A single experiment, demo, workshop or pop-up? A specific Place, locally sourced materials? Planetary boundaries, circular economy?"
     },
     {
+      "id": 32,
       "name": "Cohere",
       "tagline": "And now our minds are one",
       "description": "When beings, systems and ideas are in tune they act in harmony and flow. Initiate practices that can bring the group or system into coherence, within and without.",
       "keywords": "Synchronise, attune, harmonise, congruency, rapport, collective intelligence, togethering, scenius, affinity",
-      "questions": "What wants to cohere? How can you harmonise? What brings coherence?"
+      "questions": "Is there a need for participatory processes and collective intelligence? What practices can create group coherence in this situation? Building trust, communication, team activities, acting in concert... What place or setting would best support communication to flow? What forms of interacting can create coherence in the community? Song, food, dance, games, ritual, Circling..."
     },
     {
-      "name": "Creativity",
-      "tagline": "Play is how life learns",
-      "description": "Become serious about play. See imagination as a public good. Fail better and love mistakes, experiment until you make the right one. Suspend judgement.",
-      "keywords": "Imagination, experimentation, iteration, synthesis, artistry, craft",
-      "questions": "What wants to be created? How can you play? What experiments might you try?"
-    },
-    {
-      "name": "More-than-human",
-      "tagline": "We coexist in a common wealth of breath",
-      "description": "Acknowledge all species with attention and gesture, show that you want them to thrive. Expand your sense of 'people' to all beings.",
-      "keywords": "Life centred design, nonhuman people, animism, pluralism, bio-collectives, animalhood",
-      "questions": "What other beings are present? How are they thriving? What do they need?"
-    },
-    {
-      "name": "Belong",
-      "tagline": "With a feeling of love and belonging comes the courage to be our true selves",
-      "description": "Accept yourself and others will accept you. We come 'out of' the world not 'into it' — everyone is native to Earth. We all belong in Gaia.",
-      "keywords": "Connect, reside, identify, relate",
-      "questions": "Where do you belong? How can you deepen belonging? Who else belongs here?"
-    },
-    {
+      "id": 33,
       "name": "Wholeness",
       "tagline": "We contain multitudes",
       "description": "Bring your whole self to your work and be seen by others. Witnessing each other in wholeness creates trust and resilience.",
       "keywords": "Integrated diversity, multifaceted, breadth & depth, acceptance, inclusion, individuation, authenticity",
-      "questions": "What parts of yourself are hidden? How can you be more whole? What multitudes do you contain?"
+      "questions": "How do we understand what wholeness means not just for ourselves, but also for others? Does the situation allow for people to express their whole selves? What designs and practices can begin reconnecting those excluded parts of the whole? How does wholeness manifest at the collective level?"
     },
     {
-      "name": "Keystone species",
-      "tagline": "We have an integral role to play in the life of the world",
-      "description": "See humanity's unique potential and capability for regenerating planetary health. Our power is matched only by our responsibility.",
-      "keywords": "Nature as teacher, nature as mentor, nature as guide, biophilia",
-      "questions": "What is your unique role? How can you serve the whole? What is your gift to give?"
+      "id": 34,
+      "name": "Creativity",
+      "tagline": "Play is how life learns",
+      "description": "Become serious about play — see imagination as a public good. Fail better and love mistakes, experiment until you make the right one. Suspend judgement.",
+      "keywords": "Imagination, experimentation, iteration, synthesis, artistry, craft",
+      "questions": "How is creativity being valued in this situation? For its own sake or as a means... How would the project or system look if it was a work of art? Is there an artist in residence in the project, organisation or within yourself? If not, why not? How can creativity aid in learning, integrating and generating solutions?"
     },
     {
+      "id": 35,
+      "name": "More-than-human",
+      "tagline": "We coexist in a common wealth of breath",
+      "description": "Acknowledge all species with attention and gesture, show that you want them to thrive. Expand your sense of 'people' to all beings.",
+      "keywords": "Solastalgia, guardian, citizen, symbiocene, bioregional custodians, earthlings, indigeneity",
+      "questions": "Where are the commonly shared spaces around you? How does human ownership affect the commons of life? How can the design approach be 'life centred' more than 'human centred'? How can we shift from a worldview of Human supremacy to one of co-nativity? Who has rights and representation? Is nature on the board? Could a river, mountain or species have a representative on the board..."
+    },
+    {
+      "id": 36,
+      "name": "Belong",
+      "tagline": "With a feeling of love and belonging comes the courage to be our true selves",
+      "description": "Accept yourself and others will accept you. We come 'out of' the world not 'into it' — everyone is native to Earth. We all belong in Gaia.",
+      "keywords": "Connect, reside, identify, relate",
+      "questions": "When and where do you experience belonging? Place, Elders How is culture being honoured and expressed? In what ways is the organisation or community belonging to the world? How can shifting from extracting to regenerating bring a system into belonging?"
+    },
+    {
+      "id": 37,
       "name": "Nurture",
       "tagline": "Nature is nurture",
-      "description": "Express your parental and mentoring instincts — there are more than human beings to nurture. Reflect on the nurturing you have received, consider how you nurture yourself.",
+      "description": "Express your parental and mentoring instincts, there are more than human beings to nurture. Reflect on the nurturing you have received — consider how you nurture yourself.",
       "keywords": "Care, cultivate, feed, encourage, safety",
-      "questions": "What needs nurturing? How do you nurture yourself? Who or what are you caring for?"
+      "questions": "What is the young growth that needs nurturing? Self, other, community, start-up, ecosystem, dream... How can nature nurture you? How can it nurture an organisation, project or dream? What kinds of care: attention, love, patience and resources; information, energy, nutrients are required to nurture the new? If it takes a village, who are the villagers?"
     },
     {
+      "id": 38,
       "name": "Gratitude",
       "tagline": "To give thanks is to fully receive",
       "description": "Practicing gratitude helps to circulate the living flow of energy and abundance. Write, speak or gesture your gratitude for life and share it with others.",
       "keywords": "Thanks, acknowledgement, appreciation, celebration, generous feeling, love",
-      "questions": "What are you grateful for? How can you express thanks? What abundance is present?"
+      "questions": "When and where do you experience belonging? Place, Elders How is culture being honoured and expressed? How can gratitude be practiced within a collective? Ritual, paired practice, daily grace If you wrote a declaration of gratitude from or to your organisation or community how would it be?"
     },
     {
+      "id": 39,
       "name": "Compassion",
       "tagline": "Holding an open heart is a courageous gift to all",
       "description": "Practice compassion for yourself before widening the circle to others. Imagine feeling as another being feels — allow love to expand like ripples in a pond.",
       "keywords": "Love, empathy, emotional intelligence, care, kindness",
-      "questions": "Where is compassion needed? How do you feel what others feel? How can your heart open?"
+      "questions": "Do you believe everyone is doing the best they can? How would your view change if you did? Where are the emotional connections with the natural world? More-than-human How can you step into another point of view? Try writing a journal from an opposing perspective or speaking someone else's words... How would the organisation, community or system change if it was trauma-informed? Healing"
     },
     {
+      "id": 40,
       "name": "Threshold",
       "tagline": "A journey of a thousand miles begins with a single step",
       "description": "Expand your question into your quest — the one that requires your gift. To cross a threshold is to embrace change, mature and grow.",
       "keywords": "Point of no return, daring greatly, leaving comfort zone, rite of passage, portal",
-      "questions": "What threshold are you crossing? What quest calls you? What step begins the journey?"
+      "questions": "Are you at the threshold because you are ready? How would you feel if you took the first step? What gives you courage? What kind of resistance does this threshold or boundary bring up? Discomfort What is the uncertainty on the other side of the threshold?"
     },
     {
-      "name": "Serendipity",
-      "tagline": "Good fortune is found on new paths",
-      "description": "Make time for someone or somewhere new. Be in nature without a goal, change route and take the road less travelled.",
-      "keywords": "Happenstance, chance, sagacity, synchronicity, coincidence, surprise",
-      "questions": "What unexpected gift might arise? Where can you wander? What new path might you take?"
-    },
-    {
-      "name": "Spiral time",
-      "tagline": "History rhymes",
-      "description": "Sometimes we are close and sometimes we are far from a previous wind of the spiral. See time as an unfurling spiral rather than a straight line and notice the characteristics of the changing phases it turns through.",
-      "keywords": "Kairos, non-linear, great turning, repetitive change, spirality",
-      "questions": "What patterns are repeating? Where are you on the spiral? What phase is this?"
-    },
-    {
+      "id": 41,
       "name": "Discomfort",
       "tagline": "Resistance is fertile",
       "description": "Go through discomfort, it is a portal to authenticity and truth. Have tough conversations, hold space for heavy emotions and stay with the trouble.",
       "keywords": "Hopelessness, grief, shame, loss, failure, confusion, embarrassment, uncertainty",
-      "questions": "What discomfort are you avoiding? What wants to be felt? What truth lies beyond the discomfort?"
+      "questions": "Is discomfort being avoided and deflected? What are the uncomfortable issues, feelings and ideas in this situation? Does the community, organisation or system hold space for uncomfortable feelings? What would permission for discomfort look like? Mistakes aren't ok, they're necessary, how can we mitigate embarrassment and cultivate a culture of positive failure?"
     },
     {
+      "id": 42,
       "name": "Uncertainty",
       "tagline": "Uncertainty gives birth to all new things",
       "description": "Embracing the unknown requires releasing protections like prediction and control. Hold your intention with courage in these times of deep uncertainty.",
       "keywords": "Unknown, chaos, flux, mystery, unpredictability, deep uncertainty",
-      "questions": "What is uncertain? What are you trying to control? What might be born from not knowing?"
+      "questions": "How honest are we being with our sense of certainty? Where is prediction limited or impossible? To what extent is risk linked to uncertainty? Is uncertainty stigmatised or seen as a weakness? Where can it be allowed? How can we practice being with uncertainty? Sharing limits of knowledge within a team circle..."
     },
     {
+      "id": 43,
+      "name": "Serendipity",
+      "tagline": "Good fortune is found on new paths",
+      "description": "Make time for someone or somewhere new. Be in nature without a goal, change route and take the road less travelled.",
+      "keywords": "Happenstance, chance, sagacity, synchronicity, coincidence, surprise",
+      "questions": "How can space be made for random occurrence in this situation? What kinds of diversity can create the conditions for serendipity? What patterns, routines or habits can be changed to create novelty? What random process can generate solutions and new approaches?"
+    },
+    {
+      "id": 44,
       "name": "Release",
       "tagline": "Release creates space for renewal",
-      "description": "Release attachment to fixed identities, welcome authenticity. Relax the tension of desired outcomes. Resolve what you can and let go what you can't.",
+      "description": "Release attachment to fixed identities, welcome authenticity. Relax the tension of desired outcomes — resolve what you can and let go what you can't.",
       "keywords": "Surrender, let go, allow, exhale, decompress, relax, erupt",
-      "questions": "What needs to be released? What are you holding that no longer serves? What space will this create?"
+      "questions": "Does release require surrender or an expression of energy? Muscles, breath, outcomes, solutions, expectations... Where is tension built up in the system or what is overly constrained? Constrain Are there spaces for releasing old goals and no longer needed attachments? How can a pattern of release create a more adaptive system?"
     },
     {
+      "id": 45,
+      "name": "Spiral time",
+      "tagline": "History rhymes",
+      "description": "Sometimes we are close and sometimes we are far from a previous wind of the spiral. See time as an unfurling spiral rather than a straight line and notice the characteristics of the changing phases it turns through.",
+      "keywords": "Kairos, non-linear, great turning, repetitive change, spirality",
+      "questions": "How is this time like and unlike previous times? How would our expectations change if we saw development as a spiral instead of a linear sequence? What can a spiral model allow us to achieve that a linear sequence cannot? Multiple passes, continuous development... How can the golden ratio (snail shells - galaxy spirals) guide and inform our designs?"
+    },
+    {
+      "id": 46,
       "name": "Alignment",
       "tagline": "Aligning values with word and action",
       "description": "When the system's moral compass defines its actions, purpose and power connect. Saying yes and saying no can both be expressions of integrity and alignment.",
-      "keywords": "Authenticity, truth, honesty, meaning, integrity, unity, converge",
-      "questions": "What are you aligned with? Where is there misalignment? How can values guide action?"
+      "keywords": "Authenticity, truth, honesty, meaning, integrity, unify, converge",
+      "questions": "What's the highest intention in this situation? How are intrinsic and extrinsic motivations connected and in harmony? Are the core values of the individuals aligned with the collective, system or organisation? How are we acting in alignment with the earth? With Gaia?"
     },
     {
+      "id": 47,
       "name": "Fallow",
       "tagline": "Being still enough for life to move",
       "description": "Sometimes we need to stop ploughing and let things revitalise at their own pace. If you became still like a meadow something unexpected might emerge.",
       "keywords": "Stillness, allowing, replenishing, letting come, self-care, wuwei, personal growth, hibernate",
-      "questions": "What needs to lie fallow? What would emerge from stillness? How can you allow rather than force?"
+      "questions": "Does the system need a period of rest to replenish? What would that look like practically? Is it possible the solution is inaction? What if we left things to mature on their own for a while? What if progress was about making room rather than pushing? How can the notion of fallow support structural changes to the growth economy? How can we build in rest?"
+    },
+    {
+      "id": 48,
+      "name": "Keystone species",
+      "tagline": "We have an integral role to play in the life of the world",
+      "description": "See humanity's unique potential and capability for regenerating planetary health. Our power is matched only by our responsibility.",
+      "keywords": "Solastalgia, guardian, citizen, symbiocene, bioregional custodians, earthlings, indigeneity",
+      "questions": "When and where do you experience belonging? Place, Elders How is culture being honoured and expressed? In what ways is the organisation or community belonging to the world? How can shifting from extracting to regenerating bring a system into belonging?"
     }
   ],
   "doing": [
     {
-      "name": "Regenerate",
-      "tagline": "Regenerate to thrive",
-      "description": "Work with living systems by encouraging their ability to self-heal. Feel for undernourished and neglected aspects of yourself — what needs regenerating inside?",
-      "keywords": "Restore, replant, replenish, ecosystem restoration, renewal, post-collapse, revitalise",
-      "questions": "What needs regenerating? How can the system heal itself? What is undernourished?"
-    },
-    {
-      "name": "Abundance",
-      "tagline": "Increasing the conditions conducive to life",
-      "description": "Outperforming competition with radical generosity. Leave places more alive than you found them.",
-      "keywords": "Generosity, net-positive, non-zero sum, surplus",
-      "questions": "What abundance is present or possible? How can you create surplus? What generosity can you offer?"
-    },
-    {
-      "name": "Stabilise",
-      "tagline": "Home sweet homeostasis",
-      "description": "Life creates conditions conducive to life by minimising temperature extremes and stabilising climates. Explore forms of self-regulation — calibrate your own range to find balance.",
-      "keywords": "Lower extremes, equilibrium, homeostasis, balance, co-regulate, self-management",
-      "questions": "What needs stabilising? How can extremes be moderated? What creates balance?"
-    },
-    {
-      "name": "Empower",
-      "tagline": "Power over, power within, power with, power to",
-      "description": "Become powerful enough to empower others. Demonstrate leadership by giving 'power to' and holding 'power with' other beings so they can shape their own life and world.",
-      "keywords": "Coach, empower, support, ally, sovereignty, agency, co-creation",
-      "questions": "Who needs empowering? How can you share power? What agency can you create?"
-    },
-    {
-      "name": "Biomimicry",
-      "tagline": "Mirroring nature's brilliance",
-      "description": "Life has 3.8 billion years of experience to share, draw inspiration with humility. Imitating nature's forms, processes and systems to re-harmonise our relationships.",
-      "keywords": "Nature as teacher, nature as mentor, nature as guide, biophilia",
-      "questions": "What can you learn from nature? What patterns can you mirror? How does nature solve this?"
-    },
-    {
-      "name": "Optimise",
-      "tagline": "The best for all is the best for one",
-      "description": "If Maximising increases growth by extracting nutrients from the whole, Optimising refines processes by nourishing the whole. Be a healthy cell in the body of the world, just as you are.",
-      "keywords": "Maturity, refinement, planetary health, benefit the whole",
-      "questions": "What can be optimised? How does this benefit the whole? What refinement is needed?"
-    },
-    {
-      "name": "Decentralise",
-      "tagline": "The revolution will be decentralised",
-      "description": "Natural systems expand as space filling patterns, forming resilient networks. A web can hold if some strands break. Spread out decision making, delegate and diversify.",
-      "keywords": "Scale out, networked, peer to peer, mesh, self-organising, horizontal, distributed",
-      "questions": "What can be distributed? How can power spread? What networks can form?"
-    },
-    {
-      "name": "Transform",
-      "tagline": "Life is change",
-      "description": "Deep adaptation requires deep transformation, both are needed in this time. From consuming to creating, something entirely new...",
-      "keywords": "Change, metamorphosis, conversion, transmutation, transfiguration, alteration, phase shift",
-      "questions": "What is transforming? What form is emerging? What fundamental change is needed?"
-    },
-    {
-      "name": "Conditions",
-      "tagline": "Attending to the whole",
-      "description": "A systems approach may be more about tending conditions for change than direct action. Tend the relationships that can give rise to the change, allow it to emerge from there.",
-      "keywords": "Tending, circumstances, indirect work, emergence, prepare the soil",
-      "questions": "What conditions are needed? How can you tend rather than force? What relationships need attention?"
-    },
-    {
+      "id": 49,
       "name": "Wealth for life",
       "tagline": "The currency of nature is not money, it is life",
       "description": "Practice multi-capital abundance by centring forms of non-financial wealth. Connect value with values. See multiple capitals as a richness of flows.",
       "keywords": "Multiple capitals, Re-fi, natural capitals, Doughnut Economics, post-growth, co-prosperity",
-      "questions": "What forms of wealth are present? What values guide value? How do multiple capitals flow?"
+      "questions": "Does the economy serve life or does life serve the economy, which way is purpose flowing? What other forms of wealth are recognised in this situation? Social, natural, intellectual, spiritual... How is capital being used as a resource to energise life? What is the financial value of ecosystem services in this situation? Shade & cooling, drought, fire & flood resistance or insurance..."
     },
     {
+      "id": 50,
+      "name": "Food for life",
+      "tagline": "Regenerative agriculture fundamentally shifts our relationship within nature",
+      "description": "The quality of your nutrition affects the quality of you. Choose food that has been cultivated in a caring way, every choice is a vote for the food you want to see in the world.",
+      "keywords": "Regenerative agriculture, syntropy, polyculture, permaculture, biodiversity, foodscapes, nutrition",
+      "questions": "What kind of nutrition is feeding you, the community or organisation? How can 'farm to fork' and shortened supply chains be implemented? How far is the food travelling? Is the food you're eating in alignment with your values? How are the seasons affecting your diet? Will a changing climate change the availability of certain foods?"
+    },
+    {
+      "id": 51,
       "name": "Embracing Flows",
       "tagline": "When the winds of change blow, some build walls, others build windmills",
-      "description": "How flows move through the system is more important than their destination. Embrace the fluctuation of flows like the land — rivers don't rush in straight lines to the sea.",
+      "description": "How flows move through the system is more important than their destination. Embrace the fluctuation of flows like the land, rivers don't rush in straight lines to the sea.",
       "keywords": "The great flow-energy field, elemental energies, absorbing, contours, flow structures",
-      "questions": "What flows are present? How can you work with them? What contours shape the flow?"
+      "questions": "What flows exist in this entity or system? Energy, elements, resources, people, ideas... What cycles are there in this situation? How are flows affected by energy cycles? How can flows be embraced and elongated for greater exchange? How can a design or construction embrace flows from the surrounding place?"
     },
     {
+      "id": 52,
+      "name": "Rewilding",
+      "tagline": "Our lineage is wild, including and integrating it enhances civilisation",
+      "description": "Some nurturing requires inaction — allow wilderness to occur. There is soulfulness in wildness, let us bring it in now.",
+      "keywords": "Freedom, individuation, release control, allow, self-willed",
+      "questions": "Where is wild life being suppressed by the community, organisation or system? Are there places in the area with potential for wilderness to grow? Place, Lawns, roofs, verges... What aspects of you could be wild if you let them? Self-willed, mature, independent, creative... How can wildness be valued more by humans? Diversity, Margins, Wholeness, resilience..."
+    },
+    {
+      "id": 53,
       "name": "Reconnecting",
       "tagline": "Life is seeking connection, it needs the freedom to find it",
       "description": "Identify structures of separation and segregation. Create freedom for life to move through. Stitch the wound.",
       "keywords": "Reconnecting, healing, bridging, opening, interweaving",
-      "questions": "What needs reconnecting? What separations exist? How can connections be restored?"
+      "questions": "What has been separated, severed or divided that needs to be reconnected? Is the deer crossing the road or the road crossing the forest? How can more channels be opened to allow feedback and flows? What patterns of structure are enforcing separation in the built environment?"
     },
     {
+      "id": 54,
+      "name": "Layering purpose",
+      "tagline": "Loving linking life in layers of ways",
+      "description": "Purpose is relational and multifaceted, layer more than just human purpose into your activities and designs. Become like a tree, a nexus of relationships.",
+      "keywords": "Multipurpose, systemic relations, manifold, multifacted, stacking functions",
+      "questions": "How is the system optimising for a diversity of relationships? How can the built environment, home or office increase relationships with the more-than-human world? Bee bricks, bird boxes, living walls and roofs, ponds... How can infrastructures contribute to ecosystem services? Sequester water, create soil, cool temperature, reflect sunlight, clean the air... What additional business models and purposes can be stacked into the current processes? Cycling nutrients"
+    },
+    {
+      "id": 55,
+      "name": "Cycle nutrients",
+      "tagline": "Waste is simply nutrients out of circulation",
+      "description": "A monster is that which grows when we don't engage with it, integrate the shadow and bring in the externalities. Renew purpose for the rejected and 'used up'.",
+      "keywords": "Upcycle, zero waste, circular economy, cyclical growth, autophagy, reintegration",
+      "questions": "Is the system creating a balance of giving and taking? What is being wasted and what is the potential in the waste? Energy, space, time, people, events, tools, knowledge, capital, materials, carbon... Can impermanence help to design for cycling materials? What aspects of individuals are being wasted and how can these be brought back into expression? Gift, Wholeness"
+    },
+    {
+      "id": 56,
       "name": "Seasons & cycles",
       "tagline": "Attune to the seasons and cycles of the world",
       "description": "Pattern your plans in tune with the clocks of our living system. Allow priorities and goals to grow out of natural timing.",
       "keywords": "Rhythm, cycle, repetitive change, phases, seasonality",
-      "questions": "What season is this? What cycle are you in? What timing does nature suggest?"
+      "questions": "What seasons and cycles influence the being or system? How do cycles affect flows of energy? Seasonal, lunar, circadian, menstrual, diurnal, calendrical... What natural cycles can the community, organisation or system align with and celebrate? How can natural cycles shape calendars and patterns of interaction and work? Pattern Can the seasons guide the life cycle of a startup, project or organisation?"
     },
     {
-      "name": "Food for life",
-      "tagline": "Regenerative agriculture fundamentally shifts our relationship within nature",
-      "description": "The quality of your nutrition affects the quality of you. Choose food that has been cultivated in a caring way — every choice is a vote for the food you want to see in the world.",
-      "keywords": "Regenerative agriculture, syntropy, polyculture, permaculture, biodiversity, foodscapes, nutrition",
-      "questions": "What nourishes you? How is your food grown? What food systems do you support?"
+      "id": 57,
+      "name": "Regenerate",
+      "tagline": "Regenerate to thrive",
+      "description": "Work with living systems by encouraging their ability to self-heal. Feel for undernourished and neglected aspects of yourself, what needs regenerating inside...",
+      "keywords": "Restore, replant, replenish, ecosystem restoration, renewal, post-collapse, revitalise",
+      "questions": "What needs to be regenerated? Place, Relationship, ecosystem, community, Creativity... How is the relationship, organisation or system regenerating itself and the life it relies on? Who are then non human allies in land regeneration? What can be learnt from their gifts? Rewilding, More-than-human, Biomimicry How is the narrative of regeneration culturally relevant to different groups of people and place?"
     },
     {
-      "name": "Rewilding",
-      "tagline": "Our lineage is wild, including and integrating it enhances civilisation",
-      "description": "Some nurturing requires inaction — allow wilderness to occur. There is soulfulness in wildness, let us bring it in now.",
-      "keywords": "Freedom, individuation, release, control, allow, self-willed",
-      "questions": "What wants to be wild? Where can you allow rather than control? What wilderness calls?"
+      "id": 58,
+      "name": "Abundance",
+      "tagline": "Increasing the conditions conducive to life",
+      "description": "Outperforming competition with radical generosity. Leave places more alive than you found them.",
+      "keywords": "Generosity, net-positive, non-zero sum, surplus",
+      "questions": "In what way could the system, project or organisation become a net contributor to the life of the world? Where can we shift from consumer to prosumer? Creating more energy, water, resources and life than are consumed What systems are more valuable the more they are shared? Language, renewable energy... Can we break the global competition for scarce resources by creating net-positive systems?"
     },
     {
-      "name": "Layering purpose",
-      "tagline": "Loving linking life in layers of ways",
-      "description": "Purpose is relational and multifaceted — layer more than just human purpose into your activities and designs. Become like a tree, a nexus of relationships.",
-      "keywords": "Multipurpose, systemic relations, manifold, multifacted, stacking functions",
-      "questions": "What purposes layer here? How can multiple functions stack? What relationships connect?"
+      "id": 59,
+      "name": "Stabilise",
+      "tagline": "Home sweet homeostasis",
+      "description": "Life creates conditions conducive to life by minimising temperature extremes and stabilising climates. Explore forms of self-regulation — calibrate your own range to find balance.",
+      "keywords": "Lower extremes, equilibrium, homeostasis, balance, co-regulate, self-management",
+      "questions": "How does the being, relationship or system stabilise its state? Balance, feedback... What has become destabilised that needs more Balance? What practices can calibrate the body's ability to stabilise temperature and emotional state? Cold plunge, steam, silence, vocal expression, breath-work... What practices for co-regulation can support a stable team, community or organisation? Feedback, cohere..."
     },
     {
-      "name": "Cycle nutrients",
-      "tagline": "Waste is simply nutrients out of circulation",
-      "description": "A monster is that which grows when we don't engage with it — integrate the shadow and bring in the externalities. Renew purpose for the rejected and 'used up'.",
-      "keywords": "Upcycle, zero waste, circular economy, cyclical growth, autophagy, reintegration",
-      "questions": "What is being wasted? How can outputs become inputs? What cycles need closing?"
+      "id": 60,
+      "name": "Empower",
+      "tagline": "Power over, power within, power with, power to",
+      "description": "Become powerful enough to empower others. Demonstrate leadership by giving 'power to' and holding 'power with' other beings so they can shape their own life and world.",
+      "keywords": "Coach, empower, support, ally, sovereignty, agency, co-creation",
+      "questions": "What conditions can you create to empower others? How can power be abundant and not 'more for them' meaning 'less for me'? What opportunities and spaces does the system need to offer for individual beings to come to their power in their own way? What are the beliefs and assumptions about people that may block empowerment? 'People need to be managed'..."
+    },
+    {
+      "id": 61,
+      "name": "Biomimicry",
+      "tagline": "Mirroring nature's brilliance",
+      "description": "Life has 3.8 billion years of experience to share, draw inspiration with humility. Imitating natures forms, processes and systems to re-harmonise our relationships.",
+      "keywords": "Nature as teacher, nature as mentor, nature as guide, biophilia",
+      "questions": "Can we make time to observe nature's brilliance? How does nature do what needs to be done here? Place Where has life already perfected the materials we need? What are the processes we can mimic from nature to solve our challenges? What are the systems of processes and forms in nature that we can emulate? Pattern, Cycle nutrients"
+    },
+    {
+      "id": 62,
+      "name": "Optimise",
+      "tagline": "The best for all is the best for one",
+      "description": "If Maximising increases growth by extracting nutrients from the whole, Optimising refines processes by nourishing the whole. Be a healthy cell in the body of the world, just as you are.",
+      "keywords": "Maturity, refinement, planetary health, benefit the whole",
+      "questions": "Is growth necessary? How is it benefitting the whole? What improvements to processes can be made if the how is as important as the why? Can you prioritise quality over quantity? Where? Is the process, product or service the most mature that it can be? How would your approach change if it were optimised for planetary health?"
+    },
+    {
+      "id": 63,
+      "name": "Decentralise",
+      "tagline": "The revolution will be decentralised",
+      "description": "Natural systems expand as space filling patterns, forming resilient networks — a web can hold if some strands break. Spread out decision making, delegate and diversify.",
+      "keywords": "Scale out, networked, peer to peer, mesh, self-organising, horizontal, distributed",
+      "questions": "How could decentralisation benefit the situation or system? Diversity Where has power become too concentrated and centralised? Describe why... How can decisions be made locally or at the lowest levels? Subsidiarity, devolution, self-management... How can this project or organisation become a distributed economy rather than an economy of scale?"
+    },
+    {
+      "id": 64,
+      "name": "Transform",
+      "tagline": "Life is change",
+      "description": "Deep adaptation requires deep transformation, both are needed in this time. From consuming to creating, something entirely new...",
+      "keywords": "Change, metamorphosis, conversion, transmutation, transfiguration, alteration, phase shift",
+      "questions": "How can we support transformation instead of imposing change? Instead of working to overcome a being or system can it be transformed into something new? Compassion, integration, emergence, Transcend & include... What kind of support and care is needed during and after the transformative process? Space, time, softness, coaching, challenge, opportunity... Can we re-frame from 'solving a problem' to 'realising a potential'?"
+    },
+    {
+      "id": 65,
+      "name": "Conditions",
+      "tagline": "Attending to the whole",
+      "description": "A systems approach may be more about tending conditions for change than direct action. Tend the relationships that can give rise to the change, allow it to emerge from there.",
+      "keywords": "Tending, circumstances, indirect work, emergence, prepare the soil",
+      "questions": "What are the conditions that need tending? Identify key factors in the change you want to see. Space, well-being, accessibility, knowledge, interaction, flows, structures... Try shifting from a spotlight focus to floodlight of awareness, are the conditions broadly good for the desired outcome? What would it look like if you worked on your goals indirectly? Can a longer time horizon or more iteration help you develop the underlying conditions?"
+    }
+  ],
+  "dynamics": [
+    {
+      "id": 1,
+      "name": "Energy",
+      "tagline": "Energy animates matter into life",
+      "description": "Energy flows where your focus goes. Re-source and generate energy, direct it to benefit the whole.",
+      "keywords": "Sources, renewables, cycles & flows, peaks & troughs, alternatives, cosmogenesis, extropy",
+      "questions": "What forms of energy move through the system? Electrical, thermal, solar, kinetic, potential, emotional, mental, relational... What source of energy is supplying the system? Can the source be changed? How can energy be embraced and how can excess be stored? Embracing flows How can rest and activity at peaks and troughs of energy be honoured? Seasons & Cycles"
+    },
+    {
+      "id": 2,
+      "name": "Place",
+      "tagline": "Where culture and nature fuse",
+      "description": "Connect with local beings, textures, forms and flavours that emerge from the region. Regenerative relationships are rooted in the uniqueness of place.",
+      "keywords": "Uniqueness, suchness, biome, bioregionalism, Indigeneity, belonging, homelands",
+      "questions": "How does your project or organisation relate to the places where it operates? What are the unique qualities and characteristics of this place? How does nature do things here? Biomimicry If this place shared its needs what would they be? How are land rights being represented? How can we organise around the functions of landscapes? Patterns, Energy, Embracing flows..."
+    },
+    {
+      "id": 3,
+      "name": "Growth",
+      "tagline": "Growing and developing together",
+      "description": "Feed what you want to grow, take in the nourishment you need. Create conditions conducive to growth and development.",
+      "keywords": "Development, emergence, productivity, maximising, increase, thrive",
+      "questions": "Is growth necessary? How is it benefitting the whole? Optimise What energy and resources does growth depend on? Are they being renewed? What is the stage of growth? Juvenile, adolescent, mature, senescent... How can we make sure growth is responsible and balanced?"
+    },
+    {
+      "id": 4,
+      "name": "Yield",
+      "tagline": "In every cycle is a phase of fruition",
+      "description": "Reflect on what has been produced by a phase of growth and effort, take stock, enjoy what you've created. An honourable harvest takes only that which is given.",
+      "keywords": "Reflect, appreciate, collect, share, abundance, honourable harvest",
+      "questions": "What yield does the process or system offer? What could improve the health of the system and therefore its yield? Can the produce and outputs of the system be shared with more than human beneficiaries? Layering purpose, More-than-human If there is surplus to be shared can it be distributed as a gift?"
+    },
+    {
+      "id": 5,
+      "name": "Impermanence",
+      "tagline": "All good things... give way to the new",
+      "description": "Let breakdown give way to reorganisation in the great cycle of adaptation. Embrace endings, accept collapse.",
+      "keywords": "Change, collapse, death, decay, life-cycles, letting go, grief, release, composting",
+      "questions": "Is impermanence inevitable? Is it resisted or embraced in this situation or system? What is the life-cycle of the entity or system? Seasons & Cycles How can we design for things to die well? Companies, projects, organisations, constructions... How can we design for the end at the beginning? How can we accept and embrace new beginnings? Compost"
+    },
+    {
+      "id": 6,
+      "name": "Balance",
+      "tagline": "Life balances on the border of chaos and order",
+      "description": "Bring attention to the space between breaths. Rest, reflect and self-regulate ready for disruption.",
+      "keywords": "Stability, steady state, harmony, homeostasis, still point, equilibrium",
+      "questions": "What needs to be balanced? Where does balance exist already in the organisation, community or system? What feedback loops are at work in this situation and how do they help maintain balance? Could a specific disruption allow a new balance to emerge?"
+    },
+    {
+      "id": 7,
+      "name": "Disruption",
+      "tagline": "There is no breakthrough without breakdown",
+      "description": "Accept the inevitability of disruption and make use of the opportunities it brings. Work with disruption to shake loose old structures that no longer serve.",
+      "keywords": "Change, disturbance, disequilibrium, shift, intervention, chaos",
+      "questions": "What are the active or likely sources of disruption? Natural, climate, social, political, digital, technological... What type of disruptions would help the system evolve? Adaptability In what ways might these disruptions be part of a degenerative cycle that should be interrupted? What new growth can be encouraged as systems shift? Potential"
+    },
+    {
+      "id": 8,
+      "name": "Margins",
+      "tagline": "There is magic to be found in the marginal",
+      "description": "Switch from spotlight to floodlight, who and where is outside of the focus? Go exploring in the banks of the mainstream, pay attention to the edges.",
+      "keywords": "Edges, borders, periphery, quieter voices, liminal zones, inclusivity",
+      "questions": "Where are the margins or fertile edges in this situation or system? Where is the natural variation and diversity that can be encouraged and brought in? What is marginal in terms of idea, thought or acceptable practice? What or who are the marginal beings and outliers? What do they have to offer? Artists, Innovators, entrepreneurs, subcultures, plants, animals..."
+    },
+    {
+      "id": 9,
+      "name": "Pattern",
+      "tagline": "The world is woven of patterns and flows",
+      "description": "Shape flows of attention and activity with ritual and routine. Notice how patterns around you are either nurturing or limiting life.",
+      "keywords": "Repetition, rhythm, regularity, predictability, Li, relationship, habit, dinergy",
+      "questions": "What patterns are we creating, individually and collectively? Networks, silos, hierarchies, rituals, habits... Are the patterns old or new? What are the patterns that connect life? Reconnecting What are the elements of the pattern? Which elements make good combinations?"
+    },
+    {
+      "id": 10,
+      "name": "Potential",
+      "tagline": "Potential is the force of life poised to unfurl",
+      "description": "There is greater potential to be manifested. Take a fresh look at the system or being and imagine it expressing its full potential.",
+      "keywords": "Gift, seed, bringing forth, essence, potency, budding, realising, latent",
+      "questions": "What is the potential in this situation? What is ready to grow? Is the essence of each element and the gift of each being allowed full expression? What is the more beautiful reality your heart knows is possible? What if we switched our focus from 'solving problems' to 'realising potentials'? Conditions, Emergence"
+    },
+    {
+      "id": 11,
+      "name": "Diversity",
+      "tagline": "Unity in diversity",
+      "description": "Embrace unfamiliar beings, elements and experiences. Cultivate variety, diversity is resilience.",
+      "keywords": "Variation, inclusion, resilience, richness, pluralism, difference, xenophilia",
+      "questions": "What forms of diversity exist in this system? Biological, cultural, ideological, capitals... How can diversity be encouraged and cultivated? Empower Is standardisation or conformity suppressing diversification? Can space be held for multiple ways of knowing and a plurality of truths?"
+    },
+    {
+      "id": 12,
+      "name": "Relationship",
+      "tagline": "Life is not a collection of objects but a fabric of relationships",
+      "description": "Instead of individuals try to see relationships. Health lies in the quality of connections, tend them well and know yourself through others.",
+      "keywords": "Connectedness, meaning, communication, listening, trust, reciprocity, amity, mutuality",
+      "questions": "What kind of relationships are present in this situation? Empowering, co-dependent, tutoring, creative, collaborative, symbiotic... Is there a balance to be created between efficiency and relationality in the project or system? Is the relationship in focus win/lose or win/win? Synergy How are your relationships? Try it as a greeting"
+    },
+    {
+      "id": 13,
+      "name": "Attraction",
+      "tagline": "Become a vibrational match to what you are attracting",
+      "description": "Notice what you're attracting and what is attracting you. Work with natural attractors and their ability to draw attention, energy and activity.",
+      "keywords": "Allure, beauty, curiosity, gravity, magnetism, desire, draw, charm, fascination, love",
+      "questions": "What is doing the attracting and what is being attracted? Beings, ideas, products, experiences, systems... How can these attractions cultivate relationship? What attractions to regeneration might be created? Are attractions creating negative or positive feedback?"
+    },
+    {
+      "id": 14,
+      "name": "Mutuality",
+      "tagline": "I'll scratch your back and you scratch mine",
+      "description": "Your gifts are complementary to other beings, as are their gifts to you. Give what you can and receive what you need so both needs are being met.",
+      "keywords": "Reciprocity, relationship, exchange, gift, synergy, mutual aid, cooperation",
+      "questions": "What can you or your organisation offer and what is needed? What reciprocal relationships are active here? How can we design for reciprocity? What collaborations and shared ventures can we create for mutual benefit? Where is symbiosis at work and where can it be encouraged? Synergy"
+    },
+    {
+      "id": 15,
+      "name": "Synergy",
+      "tagline": "Co-creating a greater whole",
+      "description": "Where interests and goals are converging, allies can be identified. Bring energy to complementary relationships and allow for synergistic collaboration to emerge.",
+      "keywords": "Energetic shift, better together, win-win-win, alignment, collaboration, symbiosis",
+      "questions": "What collaborations could create new capabilities? Is there a joint venture that can realise a greater goal? What is the work that cannot be done alone? Synchronise What practices support the synthesis of ideas and abilities? Cohere, Creativity Are there some natural synthesisers that can help to bring content, ideas, products and resources together in a new way?"
+    },
+    {
+      "id": 16,
+      "name": "Interdependence",
+      "tagline": "I am because we are",
+      "description": "Our life is exquisitely interdependent with all living systems. Honour your interdependencies, trace them from your local place to the greater whole.",
+      "keywords": "Exchange, reliance, symbiosis, inter-being, mutual flourishing, interflow, concatenation",
+      "questions": "What are the interdependencies in this situation or system? How can the interdependence of systems be made visible and relevant? How can relations shift from win-lose to win-win, honouring interdependence? How could circular economy design begin to create healthy interdependencies? Cycle nutrients"
+    },
+    {
+      "id": 17,
+      "name": "Feedback",
+      "tagline": "The living world is always speaking to us and through us",
+      "description": "Practice processes of self-reflection as a form of internal feedback. Create space and permission to give and receive, seek out feedback and integrate it.",
+      "keywords": "Self-regulation, adaptation, adjustment, reflection, homeostasis, positive and negative, Safe & brave space",
+      "questions": "How can critical self reflection be supported before feedback is given? Journalling, self-reflection... How does and how could the system or organisation see and sense itself? Data, dialogue, review, audit, sensors, warm data What feedback systems need to be put in place to adapt to new changes? Adaptability Who or what can offer good feedback from outside the system?"
+    },
+    {
+      "id": 18,
+      "name": "Integration",
+      "tagline": "Continuously becoming more whole",
+      "description": "Bring the novel and the new, the marginal and emergent into cohesion with the whole. Try creative mediums to integrate learnings, ideas and experiences in different ways.",
+      "keywords": "Processing, internalising, memorising, composting, belonging, understanding",
+      "questions": "What needs integrating in this context? Ideas, experiences, cultures, outliers, margins, waste... If all the parts of the system were integrated what would it look like? Which seasons & cycles can create a pattern for integration? Does being out of the task-oriented mode allow for integration? Relaxation, sleep, freeform space..."
+    },
+    {
+      "id": 19,
+      "name": "Emergence",
+      "tagline": "From simplicity, complexity grows",
+      "description": "Life comes out of the world, in the way an apple tree 'apples', the planet 'peoples' and so, our lives are emerging. Complexity emerges out of many simple interactions and relationships.",
+      "keywords": "Potential, unfolding, unexpected phase shift, new being, unfolding",
+      "questions": "What conditions are present that could allow for emergence? Integration, synergy, relationship, adaptation... Is there an emergency that is stimulating an emergence? What characteristics does the whole have that are not present in the parts? How is the collective creating spaces for emergence?"
+    },
+    {
+      "id": 20,
+      "name": "Nested Systems",
+      "tagline": "Zooming in and out at the same time",
+      "description": "Support subsystems to contribute to the health of the whole. You are a community of microscopic life within a community of macroscopic life — all scales are linked.",
+      "keywords": "Wholes within wholes, holons, concentric, matryoshka, holobiants, micro-macro, trophic levels, fractals",
+      "questions": "What nested systems exist here? Cellular, Individual, community, economy, ecosystem... What are the essential characteristics and potentials of each sub system? Teams, departments, cities, ecosystems What interactions exist between the nested systems? Class - school, team - company, garden - bioregion... What forms of feedback link different scales?"
+    },
+    {
+      "id": 21,
+      "name": "Collapse",
+      "tagline": "When systems break down new life breaks through",
+      "description": "Collapse is an essential stage in all cycles of adaptation, allow autumn to fall. Make space for collapse to occur without resistance, end a period of exertion.",
+      "keywords": "Crash, decline, fall, obsolescence, unravelling, apoptosis",
+      "questions": "What kind of disruption could cause a collapse? How can we plan for collapse in the life cycle of a project, organisation or structure? How can a collapse present a source of nutrition for new growth? Cycle nutrients Can release offer a way of being with and allowing collapse?"
+    },
+    {
+      "id": 22,
+      "name": "Entanglement",
+      "tagline": "Life holds itself in so many ways",
+      "description": "See beings and contexts as continuous with each other through time and space — consider where you really end and begin. Relax boundaries and borders so life can hold itself together.",
+      "keywords": "Overlap, fuzzy boundaries, syntropy, synthesis, sensuality, loving",
+      "questions": "How can viewing the world as entangled allow us to focus on relationships? How would our view shift if there were no beginnings or endings? How are entities entangled through time? Elders, Transcend & include... What are the internal entanglements within the system or organisation?"
+    },
+    {
+      "id": 23,
+      "name": "Synchronise",
+      "tagline": "Coordinated action turns ripples into waves of change",
+      "description": "Find patterns of working together for greater thriving. Timing is key, create shared agreements and commitments to act.",
+      "keywords": "Synchronised action, collaboration, surplus, abundance, harmony, concordance",
+      "questions": "What are the goals and shifts that can only be achieved through synchronised action? Across organisations, communities, countries... What larger patterns can create a framework for synchronised action? Seasons & cycles, calendars... Who can you coordinate with to amplify positive impact? Synergy What prior agreements can be created to ensure that a leap or change is shared?"
+    },
+    {
+      "id": 24,
+      "name": "Compost",
+      "tagline": "Endings enrich new beginnings",
+      "description": "The composting phase is how life creates conditions for new growth. In a time of breakdown there may be much activity under the surface.",
+      "keywords": "Hospicing, decomposing, unlearning, death, decay, enrichment, fertility",
+      "questions": "What is over-ripe and ready to be composted? Products, processes, experiences, assumptions... What could a process of composting look like for projects, products or processes that have finished their life cycle? Reviewing, appraising, repurposing, reclaiming — Cycle nutrients What can we add to the compost to create conditions for new life? What forms of 'composting' can shift us from a linear to a cyclical form of growth?"
     }
   ]
 };
