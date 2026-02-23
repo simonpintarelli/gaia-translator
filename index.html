@@ -708,9 +708,6 @@ const CARDS = {
 };
 
 const EXAMPLES = [
-  { label:"ALPS fabric recovery",
-    text:"ALPS is recovering the fabric. Storage seems to be ok, waiting for someone else to do some tests." },
-
   { label:"GPU kernel crash (again)",
     text:"ROCm runtime error: illegal memory access at kernel launch. Process terminated with signal 11. Core dump written to /tmp. Please investigate. This is the third time this week." },
 
@@ -726,17 +723,11 @@ const EXAMPLES = [
   { label:"Disk quota disaster",
     text:"User storage quota exceeded on /scratch. 98% used. Jobs failing with 'no space left on device'. User has 47TB of checkpoint files from 2022. Please help." },
 
-  { label: "IPv6 mystery",
-    text: "Hi everyone, seeing weird IPv6 errors that slowdown startup: '[c10d] The IPv6 network addresses cannot be retrieved (gai error: -2)'. Is this a cluster issue or my config? It's driving me crazy."},
-
   { label: "Slurm not responding",
     text: "squeue returns 'Zero Bytes were transmitted or received'. Tried multiple login nodes. Is Slurm down or is it just me?"},
 
   { label: "New user: files vanished?!",
     text: "Hi, I'm new to Daint. I SSH'd in successfully but all my files disappeared! Where did they go? They were just on my laptop. How do I get them onto the cluster to run my Python scripts?"},
-
-  { label: "fingerprint mismatch",
-    text: "$ ssh santis @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @ @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@I should be able to use the filesystems, right?"},
 
   { label: "GPU direct MPI error",
     text: " Dear Service Desk , After the Maintenance , the CP2K calculations are stuck and not running. and reporting {{ cxil_map: write error cxil_map: write error}} the calculations starts and then it doesnt continue and slurm doesnt" },
@@ -746,21 +737,21 @@ const EXAMPLES = [
 
   { label: "gnuplot isn't installed",
    text: "I’m wondering how to access gnuplot on eiger/daint. I’ve looked at alps resources and I can’t find information on this. Is there an available uenv i can pull, or do i need to compile it myself? Many in our group are interested in this. Thanks for all the help,"},
-  { label: "running jobs on the login node",
-    text: "We have noticed that you are running running on the GPU of the login node of Daint.Alps. As a reminder, it is forbidden to run for long times on login nodes, as detailed in the fair usage policies"},
-  { label: "nsys error",
-    text: "Hi, I am using nsys (Nvidia Nsight System) to profile some GPU MPI code. While all works fine on simple codes, I am getting the following error when trying to profile a subset of my actual application which has async kernel launches on concurrent tasks: RuntimeException"},
   { label: "VASP",
     text: "My VASP DFT calculation is taking 18 hours per iteration on 128 cores. Need to finish 200 iterations before grant deadline. Currently using default ALGO=Normal. Should I switch to ALGO=Fast or increase NCORE?"},
-  { label: "personal inquiry",
-    text: "I feel stuck in my career. I keep doing the same work and I'm not sure if I should stay or look for something new. I don't know what I want."},
   { label: "oracle cards",
     text: " I work at a scientific research institution. My colleagues have started practicing oracle card reading as part of mandatory workplace training. I spend my days reasoning about physical reality. Now I am being asked to find meaning in shuffled cards and told this reflects our institutional values. When I raised concerns I was told I was \"not yet open to emergence.\" I don't know if my discomfort is integrity or rigidity. I feel lost."
  },
  { label: "witnessing a puddle",
   text: "We were asked to go outside and observe a natural system. I watched a puddle. I am not sure what this is supposed to teach me about organizational dynamics"},
  { label: "Interrogating the Gaia Translator",
-   text: "Dear Gaia Translator, How do you relate to ecofeminism? Deep ecology? Esoterics? Postcolonial theory? New Age spirituality?"}
+   text: "Dear Gaia Translator, How do you relate to ecofeminism? Deep ecology? Esoterics? Postcolonial theory? New Age spirituality?"},
+{ label: "facilitator guidance",
+   text: "As someone bringing this deck into a technical/scientific workplace, which cards would require the most careful framing to avoid misapplication?" },
+{ label: "epistemological tension",
+  text: "Which cards sit in greatest tension with evidence-based or scientific ways of knowing? I'd like to understand where the deck acknowledges this." },
+{ label: "cards needing grounding",
+  text: "Which cards carry the highest risk of spiritual bypassing or being detached from material reality when drawn without complementary cards?" }
 ];
 
 
