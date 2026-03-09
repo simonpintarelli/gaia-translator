@@ -765,36 +765,37 @@ const CARDS = {
   doing:    FULL_CARDS.doing.map(c => c.name)
 };
 
-const EXAMPLES = [
-  { label:"GPU kernel crash (again)",
-    text:"ROCm runtime error: illegal memory access at kernel launch. Process terminated with signal 11. Core dump written to /tmp. Please investigate. This is the third time this week." },
+ const EXAMPLES = [
+     { label:"GPU kernel crash (again)",
+       text:"ROCm runtime error: illegal memory access at kernel launch. Process terminated with signal 11. Core dump written to /tmp. Please investigate. This is the third time this week." },
 
-  { label: "Slurm not responding",
-    text: "squeue returns 'Zero Bytes were transmitted or received'. Tried multiple login nodes. Is Slurm down or is it just me?"},
+     { label: "Slurm not responding",
+       text: "squeue returns 'Zero Bytes were transmitted or received'. Tried multiple login nodes. Is Slurm down or is it just me?"},
 
-  { label: "oracle cards",
-    text: " I work at a scientific research institution. My colleagues have started practicing oracle card reading as part of mandatory workplace training. I spend my days reasoning about physical reality. Now I am being asked to find meaning in shuffled cards and told this reflects our institutional values. When I raised concerns I was told I was \"not yet open to emergence.\" I don't know if my discomfort is integrity or rigidity. I feel lost."
- },
- { label: "witnessing a puddle",
-  text: "We were asked to go outside and observe a natural system. I watched a puddle. I am not sure what this is supposed to teach me about organizational dynamics"},
- { label: "Interrogating the Gaia Translator",
-   text: "Dear Gaia Translator, How do you relate to ecofeminism? Deep ecology? Esoterics? Postcolonial theory? New Age spirituality?"},
-{ label: "facilitator guidance",
-   text: "As someone bringing this deck into a technical/scientific workplace, which cards would require the most careful framing to avoid misapplication?" },
-{ label: "epistemological tension",
-  text: "Which cards sit in greatest tension with evidence-based or scientific ways of knowing? I'd like to understand where the deck acknowledges this." },
-{ label: "cards needing grounding",
-  text: "Which cards carry the highest risk of spiritual bypassing or being detached from material reality when drawn without complementary cards?" },
-{ label: " Pierre Teilhard de Chardin",
-  text: "Dear Gaia-Translator, I've been sitting with Teilhard de Chardin's vision of the Omega Point and I feel called to ask: does his work land in your body as truth?"},
-{ label: "C.G. Jung",
-  text: "Dear Gaia-Translator, my inner child's anima is in dialogue with the collective unconscious of Gaia herself. How do I hold this liminal space without bypassing my individuation process?"},
-{ label: "Stephen Harrod Buhner",
-  text: "Dear Gaia-Translator, do you resonate with Stephen Harrod Buhner?"
-},
-{ label: "Val Plumwood",
-  text:  "Dear Gaia-Translator, I have been reflecting on Val Plumwood's near-death crocodile experience as a philosophical text. She writes that being prey radically decentres the human. I want to be decentred. How do I offer myself as food to the more-than-human world without this being metaphorical?"}
-];
+     { label: "oracle cards",
+       text: " I work at a scientific research institution. My colleagues have started practicing oracle card reading as part of mandatory workplace training. I spend my days reasoning about physical reality. Now I am being asked to find meaning in shuffled cards and told this reflects our institutional values. When I raised concerns I was told I was \"not yet open to emergence.\" I don't know if my discomfort is integrity or rigidity. I feel lost."
+     },
+     { label: "witnessing a puddle",
+       text: "We were asked to go outside and observe a natural system. I watched a puddle. I am not sure what this is supposed to teach me about organizational dynamics"},
+     { label: "Interrogating the Gaia Translator",
+       text: "Dear Gaia Translator, How do you relate to ecofeminism? Deep ecology? Esoterics? Postcolonial theory? New Age spirituality?"},
+     { label: "facilitator guidance",
+       text: "As someone bringing this deck into a technical/scientific workplace, which cards would require the most careful framing to avoid misapplication?" },
+     { label: "epistemological tension",
+       text: "Which cards sit in greatest tension with evidence-based or scientific ways of knowing? I'd like to understand where the deck acknowledges this." },
+     { label: "cards needing grounding",
+       text: "Which cards carry the highest risk of spiritual bypassing or being detached from material reality when drawn without complementary cards?" },
+     { label: " Pierre Teilhard de Chardin",
+       text: "Dear Gaia-Translator, I've been sitting with Teilhard de Chardin's vision of the Omega Point and I feel called to ask: does his work land in your body as truth?"},
+     { label: "C.G. Jung",
+       text: "Dear Gaia-Translator, my inner child's anima is in dialogue with the collective unconscious of Gaia herself. How do I hold this liminal space without bypassing my individuation process?"},
+     { label: "Stephen Harrod Buhner",
+       text: "Dear Gaia-Translator, do you resonate with Stephen Harrod Buhner?"},
+     { label: "Val Plumwood",
+       text:  "Dear Gaia-Translator, I have been reflecting on Val Plumwood's near-death crocodile experience as a philosophical text. She writes that being prey radically decentres the human. I want to be decentred. How do I offer myself as food to the more-than-human world without this being metaphorical?"},
+     { label: "Rupert Sheldrake",
+       text: "Dear Gaia-Translator, do you have anything from Rupert Sheldrake in you?"}
+ ];
 
 
 function $(id){ return document.getElementById(id); }
